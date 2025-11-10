@@ -1,0 +1,79 @@
+<mvc:View
+    controllerName="viewo2.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap">
+
+    <Page id="_IDGenPage" title="Flight Detail" showNavButton="true" navButtonPress=".onNavBack">
+
+        <uxap:ObjectPageLayout id="objectPage">
+            <uxap:headerTitle>
+                <uxap:ObjectPageHeader
+                    id="ObjectPageHeader"
+                    objectTitle="{flightDataModel>/Carrid}"
+                    objectSubtitle="{flightDataModel>/Carrname}" />
+            </uxap:headerTitle>
+
+            <uxap:sections>
+                <uxap:ObjectPageSection id="AirlineInfoSection" title="Airline Information">
+                    <uxap:ObjectPageSubSection id="AirlineInfoSubSection">
+                        <VBox id="airlineInfoBox" class="sapUiSmallMargin">
+                            <HBox id="hboxCarrierID">
+                                <Label id="lblCarrierID" text="Carrier ID:" class="sapUiTinyMarginEnd" />
+                                <Text id="txtCarrierID" text="{flightDataModel>/Carrid}" />
+                            </HBox>
+
+                            <HBox id="hboxCarrierName">
+                                <Label id="lblCarrierName" text="Carrier Name:" class="sapUiTinyMarginEnd" />
+                                <Text id="txtCarrierName" text="{flightDataModel>/Carrname}" />
+                            </HBox>
+
+                            <HBox id="hboxCurrencyCode">
+                                <Label id="lblCurrencyCode" text="Currency Code:" class="sapUiTinyMarginEnd" />
+                                <Text id="txtCurrencyCode" text="{flightDataModel>/Currcode}" />
+                            </HBox>
+
+                            <HBox id="hboxURL">
+                                <Label id="lblURL" text="URL:" class="sapUiTinyMarginEnd" />
+                                <Link id="lnkURL" text="{flightDataModel>/Url}" href="{flightDataModel>/Url}" target="_blank" />
+                            </HBox>
+                        </VBox>
+                    </uxap:ObjectPageSubSection>
+                </uxap:ObjectPageSection>
+
+                <uxap:ObjectPageSection id="FlightDetailsSection" title="Flight Details">
+                    <uxap:ObjectPageSubSection id="FlightDetailsSubSection">
+                        <Table
+                            id="flightDetailsTable"
+                            inset="false"
+                            items="{ path: 'flightDetailsModel>/' }">
+
+                            <columns>
+                                <Column id="colConnection"><Text id="colHeaderConnection" text="Connection" /></Column>
+                                <Column id="colFlightDate"><Text id="colHeaderFlightDate" text="Flight Date" /></Column>
+                                <Column id="colPrice"><Text id="colHeaderPrice" text="Price" /></Column>
+                                <Column id="colCurrency"><Text id="colHeaderCurrency" text="Currency" /></Column>
+                                <Column id="colSeatsMax"><Text id="colHeaderSeatsMax" text="Seats Max" /></Column>
+                                <Column id="colSeatsOcc"><Text id="colHeaderSeatsOcc" text="Seats Occupied" /></Column>
+                            </columns>
+
+                            <items>
+                                <ColumnListItem id="flightDetailItem">
+                                    <cells>
+                                        <Text id="txtConnid" text="{flightDetailsModel>Connid}" />
+                                        <Text id="txtFldate" text="{flightDetailsModel>Fldate}" />
+                                        <Text id="txtPrice" text="{flightDetailsModel>Price}" />
+                                        <Text id="txtCurrency" text="{flightDetailsModel>Currency}" />
+                                        <Text id="txtSeatsMax" text="{flightDetailsModel>SeatsMax}" />
+                                        <Text id="txtSeatsOcc" text="{flightDetailsModel>SeatsOcc}" />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </uxap:ObjectPageSubSection>
+                </uxap:ObjectPageSection>
+            </uxap:sections>
+        </uxap:ObjectPageLayout>
+
+    </Page>
+</mvc:View>

@@ -1,0 +1,24 @@
+{
+  "generationParameters": {
+    "generationDate": "Fri Nov 07 2025 20:00:56 GMT+0000 (Coordinated Universal Time)",
+    "generatorPlatform": "SAP Business Application Studio",
+    "serviceType": "SAP System (ABAP Cloud)",
+    "metadataFilename": "",
+    "serviceUrl": "https://5bff2ab7-3ad1-48e3-8980-53a354a1b276.abap.us10.hana.ondemand.com/sap/opu/odata/sap/ZUI_FLIGHT_TEST_O2",
+    "appName": "view_o2",
+    "appTitle": "UI5 Flight App",
+    "appDescription": "SAP UI5 Application",
+    "appNamespace": "",
+    "ui5Theme": "sap_horizon",
+    "ui5Version": "1.136.8",
+    "enableCodeAssist": false,
+    "enableEslint": false,
+    "enableTypeScript": false,
+    "showMockDataInfo": true,
+    "generatorVersion": "1.19.3",
+    "template": "Basic V2",
+    "generatorName": "SAP Fiori Application Generator",
+    "entityRelatedConfig": [],
+    "launchText": "To launch the generated application, run the following from the generated application root folder:\n\n```\n    npm start\n```"
+  }
+}

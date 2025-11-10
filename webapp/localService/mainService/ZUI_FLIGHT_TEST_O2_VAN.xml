@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ODM',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.ODM.v1" Alias="SAP__ODM"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/zui_flight_test_o2/$metadata">
+        <edmx:Include Namespace="ZUI_FLIGHT_TEST_O2" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zui_flight_test_o2_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="cds_zui_flight_bootcamp_o4.I_DraftAdministrativeDataType/DraftUUID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.I_DraftAdministrativeDataType/DraftEntityType">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.I_DraftAdministrativeDataType/DraftAccessType">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.I_DraftAdministrativeDataType/ProcessingStartDateTime">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.I_DraftAdministrativeDataType/InProcessByUser">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.I_DraftAdministrativeDataType/DraftIsKeptByUser">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.I_DraftAdministrativeDataType/EnqueueStartDateTime">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.I_DraftAdministrativeDataType/DraftIsCreatedByMe">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.I_DraftAdministrativeDataType/DraftIsLastChangedByMe">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.I_DraftAdministrativeDataType/DraftIsProcessedByMe">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.I_DraftAdministrativeDataType/CreatedByUserDescription">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.I_DraftAdministrativeDataType/LastChangedByUserDescription">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.I_DraftAdministrativeDataType/InProcessByUserDescription">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/HasDraftEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/DraftEntityCreationDateTime">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/DraftEntityLastChangeDateTime">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/HasActiveEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/IsActiveEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/LocalCreatedBy">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/LocalCreatedAt">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/LocalLastChangedBy">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/LocalLastChangedAt">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/LastChangedAt">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/StatusCriticality">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/addUrl_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/Edit_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/to_detailsKR_oc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType/AirlineIMG">
+                <Annotation Term="UI.IsImageURL"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.ZC_FLIGHT_BOOTCAMPType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="General Information"/>
+                            <PropertyValue Property="ID" String="GeneralInfo"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Flight Details"/>
+                            <PropertyValue Property="ID" String="F2"/>
+                            <PropertyValue Property="Target" AnnotationPath="to_detailsKR/@UI.LineItem"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Flight"/>
+                        <PropertyValue Property="TypeNamePlural" String="Flights"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Carrid"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="Description">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Carrid"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="ImageUrl" Path="AirlineIMG"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Carrname"/>
+                            <PropertyValue Property="Criticality" Path="StatusCriticality"/>
+                            <PropertyValue Property="Value" Path="Carrname"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Url"/>
+                            <PropertyValue Property="Value" Path="Url"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Currcode"/>
+                            <PropertyValue Property="Value" Path="Currcode"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Add URL"/>
+                            <PropertyValue Property="Action" String="cds_zui_flight_bootcamp_o4.cds_zui_flight_bootcamp_o4_Entities/addUrl"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Add URL"/>
+                            <PropertyValue Property="Action" String="cds_zui_flight_bootcamp_o4.cds_zui_flight_bootcamp_o4_Entities/addUrl"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Carrid"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Carrname"/>
+                            <PropertyValue Property="Criticality" Path="StatusCriticality"/>
+                            <PropertyValue Property="Value" Path="Carrname"/>
+                        </Record>
+                        <Record Type="UI.DataFieldWithUrl">
+                            <PropertyValue Property="Label" String="Url"/>
+                            <PropertyValue Property="Value" Path="Url"/>
+                            <PropertyValue Property="Url" Path="Url"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="AirlineIMG"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Carrname</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.FlightDetailsKRType/HasDraftEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.FlightDetailsKRType/DraftEntityCreationDateTime">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.FlightDetailsKRType/DraftEntityLastChangeDateTime">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.FlightDetailsKRType/HasActiveEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.FlightDetailsKRType/IsActiveEntity">
+                <Annotation Term="UI.HiddenFilter"/>
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.FlightDetailsKRType/LocalCreatedBy">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.FlightDetailsKRType/LocalCreatedAt">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.FlightDetailsKRType/LocalLastChangedBy">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.FlightDetailsKRType/LocalLastChangedAt">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.FlightDetailsKRType/LastChangedAt">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.FlightDetailsKRType/cancelEconomySeat_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.FlightDetailsKRType/Delete_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.FlightDetailsKRType/Update_mc">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="cds_zui_flight_bootcamp_o4.FlightDetailsKRType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Flight Details"/>
+                            <PropertyValue Property="ID" String="FlightDetails"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Connid"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Fldate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Price"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Currency"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Max Seats"/>
+                            <PropertyValue Property="Value" Path="SeatsMax"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Occupied Seats (Economy)"/>
+                            <PropertyValue Property="Value" Path="SeatsOcc"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PaymentSum"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SeatsmaxB"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SeatsoccB"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SeatsmaxF"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SeatsoccF"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Connid"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Fldate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Price"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Currency"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Max Seats"/>
+                            <PropertyValue Property="Value" Path="SeatsMax"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Occupied Seats (Economy)"/>
+                            <PropertyValue Property="Value" Path="SeatsOcc"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="PaymentSum"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SeatsmaxB"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SeatsoccB"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SeatsmaxF"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="SeatsoccF"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Cancel Economy Seats"/>
+                            <PropertyValue Property="Action" String="cds_zui_flight_bootcamp_o4.cds_zui_flight_bootcamp_o4_Entities/cancelEconomySeat"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="_Entities"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

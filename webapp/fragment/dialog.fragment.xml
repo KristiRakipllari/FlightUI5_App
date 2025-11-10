@@ -1,0 +1,21 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog
+        id="airlineDialog"
+        title="Airline Details">
+
+        <VBox class="sapUiSmallMargin">
+            <Label text="Carrid" />
+            <Text text="{mainService>Carrid}" />
+
+            <Label text="Carrname" />
+            <Text text="{mainService>Carrname}" />
+
+            <Label text="URL" />
+            <Link text="{mainService>Url}" href="{mainService>Url}" target="_blank" />
+        </VBox>
+
+        <endButton>
+            <Button text="Close" press=".onCloseDialog" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
