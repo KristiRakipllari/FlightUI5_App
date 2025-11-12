@@ -19,23 +19,16 @@ sap.ui.define([
         
         getCarrierLogo: function (sCarrid) {
             console.log("getCarrierLogo called with:", sCarrid);
-            var imageName;
             switch (sCarrid) {
                 case "LH": 
-                    imageName = "lufthansa.png";
-                    break;
+                    return "/img/lufthansa.png";
                 case "AB": 
-                    imageName = "Logo_airberlin.svg.png";
-                    break;
+                    return "/img/Logo_airberlin.svg.png";
                 case "AL": 
-                    imageName = "airalbania.png";
-                    break;
+                    return "/img/airalbania.png";
                 default:
-                    imageName = "default_logo.png";
-                    break;
+                    return "/img/default_logo.png";
             }
-            var result = sap.ui.require.toUrl("viewo2/img/" + imageName);
-            return result;
         }
     };
 });

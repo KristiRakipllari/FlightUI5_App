@@ -3,19 +3,19 @@
         id="airlineDialog"
         title="Airline Details">
 
-        <VBox class="sapUiSmallMargin">
-            <Label text="Carrid" />
-            <Text text="{mainService>Carrid}" />
+        <VBox id="_IDGenVBox1" class="sapUiSmallMargin">
+            <Label id="_IDGenLabel" text="Carrid" />
+            <Text id="_IDGenText5" text="{mainService>Carrid}" />
 
-            <Label text="Carrname" />
-            <Text text="{mainService>Carrname}" />
+            <Label id="_IDGenLabel1" text="Carrname" />
+            <Text id="_IDGenText6" text="{mainService>Carrname}" />
 
-            <Label text="URL" />
-            <Link text="{mainService>Url}" href="{mainService>Url}" target="_blank" />
+            <Label id="_IDGenLabel2" text="URL" />
+            <Link id="_IDGenLink1" text="{mainService>Url}" href="{mainService>Url}" target="_blank" />
         </VBox>
 
         <endButton>
-            <Button text="Close" press=".onCloseDialog" />
+            <Button id="_IDGenButton" text="Close" press=".onCloseDialog" />
         </endButton>
     </Dialog>
 </core:FragmentDefinition>
