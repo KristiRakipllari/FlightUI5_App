@@ -1,0 +1,35 @@
+<mvc:View
+    controllerName="viewo2.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page id="_IDGenPage1" title="{i18n>airlinePageTitle}">
+        <content>
+
+            <Table
+                id="airlineTable"
+                inset="false"
+                headerText="{i18n>airlineTableHeader}"
+                items="{ path: 'flightDataModel>/' }">
+
+                <columns>
+                    <Column id="_IDGenColumn1"><Text id="_IDGenText" text="{i18n>colCarrid}" /></Column>
+                    <Column id="_IDGenColumn2"><Text id="_IDGenText1" text="{i18n>colCarrname}" /></Column>
+                    <Column id="_IDGenColumn3"><Text id="_IDGenText2" text="{i18n>colUrl}" /></Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem" type="Active" highlight="{= ${flightDataModel>Url} ? 'Success' : 'Error' }" press=".onItemPress">
+                        <cells>
+                            <Text id="_IDGenText3" text="{flightDataModel>Carrid}" />
+                            <Text id="_IDGenText4" text="{flightDataModel>Carrname}" />
+                            <Link id="_IDGenLink" text="{flightDataModel>Url}" href="{flightDataModel>Url}" target="_blank" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+
+            </Table>
+
+        </content>
+    </Page>
+</mvc:View>

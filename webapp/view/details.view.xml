@@ -4,7 +4,40 @@
     xmlns="sap.m"
     xmlns:uxap="sap.uxap">
 
-    <Page id="_IDGenPage" title="Flight Detail" showNavButton="true" navButtonPress=".onNavBack">
+    <Page
+    id="_IDGenPage"
+    title="Flight Detail"
+    showNavButton="true"
+    navButtonPress=".onNavBack">
+
+    <customHeader>
+        <Bar id="_IDGenBar">
+            <contentLeft>
+                <Button id="_IDGenButton1" icon="sap-icon://nav-back" press=".onNavBack" />
+            </contentLeft>
+
+            <contentMiddle>
+                <Title id="_IDGenTitle" text="Flight Detail" />
+            </contentMiddle>
+
+            <contentRight>
+                <Button id="_IDGenButton2"
+                    icon="sap-icon://refresh"
+                    tooltip="Refresh"
+                    press=".onRefresh" />
+                <Button id="generateUrlButton"
+                    text="Generate URL"
+                    icon="sap-icon://create"
+                    tooltip="Generate URL"
+                    press=".onGenerateUrl" />
+                <Button id="openUrlButton"
+                    text="Open URL"
+                    icon="sap-icon://chain-link"
+                    tooltip="Open URL"
+                    press=".onOpenUrl" />
+            </contentRight>
+        </Bar>
+    </customHeader>
 
         <uxap:ObjectPageLayout id="objectPage">
             <uxap:headerTitle>
@@ -13,6 +46,14 @@
                     objectTitle="{flightDataModel>/Carrid}"
                     objectSubtitle="{flightDataModel>/Carrname}" />
             </uxap:headerTitle>
+
+            <uxap:headerContent>
+                <Avatar id="carrierAvatar"
+                    src="{path:'flightDataModel>/Carrid', formatter:'.formatter.getCarrierLogo'}"
+                    displaySize="L"
+                    displayShape="Square"
+                    class="sapUiTinyMarginEnd" />
+            </uxap:headerContent>
 
             <uxap:sections>
                 <uxap:ObjectPageSection id="AirlineInfoSection" title="Airline Information">
@@ -58,10 +99,10 @@
                             </columns>
 
                             <items>
-                                <ColumnListItem id="flightDetailItem">
+                                <ColumnListItem id="flightDetailItem" highlight="{= ${flightDetailsModel>SeatsOcc} > 180 ? 'Success' : 'Error' }">
                                     <cells>
                                         <Text id="txtConnid" text="{flightDetailsModel>Connid}" />
-                                        <Text id="txtFldate" text="{flightDetailsModel>Fldate}" />
+                                        <Text id="txtFldate" text="{path:'flightDetailsModel>Fldate', formatter:'.formatter.formatTableDate'}" />
                                         <Text id="txtPrice" text="{flightDetailsModel>Price}" />
                                         <Text id="txtCurrency" text="{flightDetailsModel>Currency}" />
                                         <Text id="txtSeatsMax" text="{flightDetailsModel>SeatsMax}" />

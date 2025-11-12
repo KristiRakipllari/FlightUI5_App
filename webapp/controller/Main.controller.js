@@ -4,7 +4,7 @@ sap.ui.define([
 ], function (Controller, JSONModel) {
     "use strict";
 
-    return Controller.extend("viewo2.controller.view_o2", {
+    return Controller.extend("viewo2.controller.Main", {
 
         onInit: function () {
             var that = this;
@@ -36,6 +36,5 @@ sap.ui.define([
                 Carrid: sCarrid
             });
         }
-
     });
 });

@@ -1,12 +1,14 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/routing/History",
-    "sap/ui/model/json/JSONModel"
-], function (Controller, History, JSONModel) {
+    "sap/ui/model/json/JSONModel",
+    "viewo2/formatter/Formatter",
+    "sap/m/MessageToast"
+], function (Controller, History, JSONModel, Formatter, MessageToast) {
     "use strict";
-
+    
     return Controller.extend("viewo2.controller.Detail", {
-
+        formatter: Formatter,
         onInit: function () {
             var oRouter = this.getOwnerComponent().getRouter();
             oRouter.getRoute("Detail").attachPatternMatched(this._onObjectMatched, this);
@@ -55,8 +57,63 @@ sap.ui.define([
                 window.history.go(-1);
             } else {
                 var oRouter = this.getOwnerComponent().getRouter();
-                oRouter.navTo("Routeview_o2", {}, true);
+                oRouter.navTo("RouteMain", {}, true);
             }
+        },
+
+        onGenerateUrl: function () {
+            var that = this;
+            var oFlightModel = this.getView().getModel("flightDataModel");
+            var oData = oFlightModel.getData();
+
+            // If Exists?
+            if (oData.Url && oData.Url.trim() !== "") {
+                MessageToast.show("URL already exists: " + oData.Url);
+                return;
+            }
+
+            // Get carrier name and generate URL
+            var sCarrname = oData.Carrname || "";
+            if (!sCarrname) {
+                MessageToast.show("Carrier name is missing, cannot generate URL");
+                return;
+            }
+
+            var sCleanName = sCarrname.replace(/\s+/g, "").toLowerCase();
+            var sGeneratedUrl = "https://www." + sCleanName + ".com";
+
+            // Get OData model and save to database
+            var oDataModel = this.getOwnerComponent().getModel();
+            var sCarrid = oData.Carrid;
+            var sPath = "/ZC_FLIGHT_BOOTCAMP(Carrid='" + sCarrid + "',IsActiveEntity=true)";
+
+            // Update the database
+            oDataModel.update(sPath, {
+                Url: sGeneratedUrl
+            }, {
+                success: function() {
+                    // Update the local model
+                    oData.Url = sGeneratedUrl;
+                    oFlightModel.setData(oData);
+
+                    MessageToast.show("URL generated and saved: " + sGeneratedUrl);
+                },
+                error: function(oError) {
+                    console.error("Error saving URL:", oError);
+                    MessageToast.show("Error: Could not save URL to database");
+                }
+            });
+        },
+
+        onOpenUrl: function () {
+            var oFlightModel = this.getView().getModel("flightDataModel");
+            var oData = oFlightModel.getData();
+
+            if (!oData.Url || oData.Url.trim() === "") {
+                MessageToast.show("No URL available for this Airline");
+                return;
+            }
+            window.open(oData.Url, "_blank");
         }
 
     });

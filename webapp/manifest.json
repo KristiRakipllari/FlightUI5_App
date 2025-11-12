@@ -96,15 +96,14 @@
         "type": "View",
         "viewType": "XML",
         "path": "viewo2.view",
-        "async": true,
-        "viewPath": "viewo2.view"
+        "async": true
       },
       "routes": [
         {
-          "name": "Routeview_o2",
+          "name": "RouteMain",
           "pattern": ":?query:",
           "target": [
-            "Targetview_o2"
+            "TargetMain"
           ]
         },
         {
@@ -116,9 +115,9 @@
         }
       ],
       "targets": {
-        "Targetview_o2": {
-          "id": "view_o2",
-          "name": "view_o2"
+        "TargetMain": {
+          "id": "Main",
+          "name": "Main"
         },
         "TargetDetail": {
           "id": "detail",
