@@ -1,0 +1,36 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    >
+    <Dialog id="updateDialog" title="Update airline">
+        <content>
+            <form:SimpleForm id="_IDGenSimpleForm1" editable="true" layout="ResponsiveGridLayout">
+                <form:content>
+                    <Label id="_IDGenLabel3" text="{i18n>Carrid}" required="true" />
+                    <Input id="carrIDUpdate" 
+                           value="{updateModel>/Carrid}"
+                           editable="false" />
+                    
+                    <Label id="_IDGenLabel4" text="{i18n>Carrname}" required="true" />
+                    <Input id="carrNameUpdate" 
+                           value="{updateModel>/Carrname}" />
+                    
+                    <Label id="_IDGenLabel5" text="{i18n>Currcode}" required="true" />
+                    <Input id="currCodeUpdate" 
+                           value="{updateModel>/Currcode}" />
+                    
+                    <Label id="_IDGenLabel6" text="{i18n>Url}" />
+                    <Input id="URLUpdate" 
+                           value="{updateModel>/Url}" />
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <beginButton>
+            <Button id="updatecr" text="Update" press=".onUpdateRecord" />
+        </beginButton>
+        <endButton>
+            <Button id="cancelupdate" text="Cancel" press=".onCancelUpdate" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

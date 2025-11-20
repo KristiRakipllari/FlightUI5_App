@@ -34,6 +34,18 @@ server:
             path: /sap
             url: https://5bff2ab7-3ad1-48e3-8980-53a354a1b276.abap.us10.hana.ondemand.com
             destination: abap-cloud-default_abap-trial-a0735971trial-dev
+    - name: sap-fe-mockserver
+      beforeMiddleware: csp
+      configuration:
+        mountPath: /
+        services:
+          - urlPath: /sap/opu/odata/sap/ZUI_FLIGHT_TEST_O2
+            metadataPath: ./webapp/localService/mainService/metadata.xml
+            mockdataPath: ./webapp/localService/mainService/data
+            generateMockData: true
+        annotations:
+          - localPath: ./webapp/localService/mainService/ZUI_FLIGHT_TEST_O2_VAN.xml
+            urlPath: /sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZUI_FLIGHT_TEST_O2_VAN',Version='0001')/$value/
     # Mockserver disabled - using real backend via proxy
     # - name: sap-fe-mockserver
     #   beforeMiddleware: csp
