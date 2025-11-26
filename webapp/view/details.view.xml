@@ -96,6 +96,7 @@
                                 <Column id="colCurrency"><Text id="colHeaderCurrency" text="Currency" /></Column>
                                 <Column id="colSeatsMax"><Text id="colHeaderSeatsMax" text="Seats Max" /></Column>
                                 <Column id="colSeatsOcc"><Text id="colHeaderSeatsOcc" text="Seats Occupied" /></Column>
+                                <Column id="colDelete" width="10em"><Text id="colHeaderDelete" text="Remove Item" onPress=".deletechild" /></Column>
                             </columns>
 
                             <items>
@@ -107,6 +108,7 @@
                                         <Text id="txtCurrency" text="{flightDetailsModel>Currency}" />
                                         <Text id="txtSeatsMax" text="{flightDetailsModel>SeatsMax}" />
                                         <Text id="txtSeatsOcc" text="{flightDetailsModel>SeatsOcc}" />
+                                        <Button id="_IDGenButton4" icon="sap-icon://delete" type="Reject" tooltip="Delete this flight" press=".onDeletePress"/>
                                     </cells>
                                 </ColumnListItem>
                             </items>

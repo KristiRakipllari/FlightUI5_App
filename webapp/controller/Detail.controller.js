@@ -3,8 +3,9 @@ sap.ui.define([
     "sap/ui/core/routing/History",
     "sap/ui/model/json/JSONModel",
     "viewo2/formatter/Formatter",
-    "sap/m/MessageToast"
-], function (Controller, History, JSONModel, Formatter, MessageToast) {
+    "sap/m/MessageToast",
+    "sap/m/MessageBox"
+], function (Controller, History, JSONModel, Formatter, MessageToast,MessageBox) {
     "use strict";
     
     return Controller.extend("viewo2.controller.Detail", {
@@ -92,7 +93,7 @@ sap.ui.define([
                 Url: sGeneratedUrl
             }, {
                 success: function() {
-                    // Update the local model
+                    
                     oData.Url = sGeneratedUrl;
                     oFlightModel.setData(oData);
 
@@ -114,6 +115,55 @@ sap.ui.define([
                 return;
             }
             window.open(oData.Url, "_blank");
+        },
+
+        onDeletePress: function (oEvent) {
+                var oButton   = oEvent.getSource();
+                var oContext  = oButton.getBindingContext("flightDetailsModel");
+                var oFlight   = oContext.getObject();
+
+                var that = this;
+                MessageBox.confirm(
+                    "Delete flight " + oFlight.Connid + " of airline " + oFlight.Carrid + "?",
+                    {
+                        title: "Confirm Deletion",
+                        onClose: function (sAction) {
+                            if (sAction === MessageBox.Action.OK) {
+                                var oModel = that.getView().getModel();
+
+                                oModel.callFunction("/deleteEntry", {
+                                    method: "POST",
+                                    urlParameters: {
+                                        Carrid: oFlight.Carrid,
+                                        Connid: oFlight.Connid
+                                    },
+                                    success: function () {
+                                        MessageToast.show("Flight deleted successfully");
+                                        that._refreshFlightDetails(oFlight.Carrid);
+                                    },
+                                    error: function (oError) {
+                                        MessageBox.error("Deletion failed: " + oError.message);
+                                    }
+                                });
+                            }
+                        }
+                    }
+                );
+            },
+
+        _refreshFlightDetails: function (sCarrid) {
+            var that = this;
+            var oDataModel = this.getOwnerComponent().getModel();
+
+            oDataModel.read("/ZC_FLIGHT_BOOTCAMP(Carrid='" + sCarrid + "',IsActiveEntity=true)/to_detailsKR", {
+                success: function(oData) {
+                    var oDetailsModel = new JSONModel(oData.results);
+                    that.getView().setModel(oDetailsModel, "flightDetailsModel");
+                },
+                error: function(oError) {
+                    console.error("Error refreshing flight details:", oError);
+                }
+            });
         }
 
     });

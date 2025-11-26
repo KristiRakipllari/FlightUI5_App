@@ -2,8 +2,9 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
     "sap/m/MessageToast",
-    "sap/m/MessageBox"
-], function (Controller, JSONModel, MessageToast,MessageBox) {
+    "sap/m/MessageBox",
+    "sap/ui/export/Spreadsheet"
+], function (Controller, JSONModel, MessageToast,MessageBox,Spreadsheet) {
     "use strict";
 
     return Controller.extend("viewo2.controller.Main", {
@@ -247,6 +248,42 @@ sap.ui.define([
                     }
                 }
             );
+        },
+
+        onExport: function () {
+            var oModel = this.getView().getModel("flightDataModel");
+            var aData = oModel.getData();   // your table data array
+            if (!aData || aData.length === 0) {
+                sap.m.MessageToast.show("No data to export.");
+                return;
+            }
+            // Define Excel Columns (match your table)
+            var aCols = [
+                { label: "Carrid", property: "Carrid" },
+                { label: "Carrname", property: "Carrname" },
+                { label: "Url", property: "Url" }
+              
+            ];
+            // Spreadsheet settings
+            var oSettings = {
+                workbook: {
+                    columns: aCols
+                },
+                dataSource: aData,
+                fileName: "Air.xlsx"
+            };
+            var oSpreadsheet = new sap.ui.export.Spreadsheet(oSettings);
+            oSpreadsheet.build()
+                .then(function () {
+                    sap.m.MessageToast.show("Excel downloaded.");
+                })
+                .catch(function (error) {
+                    console.error(error);
+                })
+                .finally(function () {
+                    oSpreadsheet.destroy();
+                });
         }
+
     });
 });

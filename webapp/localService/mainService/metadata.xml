@@ -543,6 +543,10 @@
                     <Parameter Name="IsActiveEntity" Type="Edm.Boolean" Mode="In" sap:label="Is active"/>
                     <Parameter Name="NumberOfSeats" Type="Edm.Int32" Mode="In" Nullable="true" sap:label="Number of Seats to Cancel"/>
                 </FunctionImport>
+                <FunctionImport Name="deleteEntry" ReturnType="cds_zui_flight_bootcamp_o4.DummyFunctionImportResult" m:HttpMethod="POST">
+                    <Parameter Name="Carrid" Type="Edm.String" Mode="In" MaxLength="3" Nullable="true"/>
+                    <Parameter Name="Connid" Type="Edm.String" Mode="In" MaxLength="4" Nullable="true"/>
+                </FunctionImport>
             </EntityContainer>
             <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
             <Annotations Target="cds_zui_flight_bootcamp_o4.cds_zui_flight_bootcamp_o4_Entities/ZC_FLIGHT_BOOTCAMP" xmlns="http://docs.oasis-open.org/odata/ns/edm">

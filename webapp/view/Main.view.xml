@@ -15,6 +15,10 @@
                     icon="sap-icon://edit"
                     tooltip="Update Airline"
                     press=".onUpdatePress" />
+            <Button id="_IDGenButton8" 
+            text="Excel export"
+            icon="sap-icon://excel-attachment" 
+            press="onExport"/>
         </headerContent>
         <content>
             <Table
